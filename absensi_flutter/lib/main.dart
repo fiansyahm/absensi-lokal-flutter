@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'models/attendance_model.dart';
 import 'screens/login_screen.dart';
+import 'screens/splash_screen.dart'; // import splash screen
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,9 +18,9 @@ class AttendanceApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Aplikasi Absensi Lokasi ',
+      title: 'Aplikasi Absensi Lokasi',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const LoginScreen(),
+      home: const SplashScreen(), // ganti ke SplashScreen
     );
   }
 }

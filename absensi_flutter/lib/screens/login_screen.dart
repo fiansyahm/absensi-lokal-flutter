@@ -13,7 +13,10 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordController = TextEditingController();
 
   void _login() {
-    if (_emailController.text.isNotEmpty && _passwordController.text.isNotEmpty) {
+    const validEmail = 'admin@gmail.com';
+    const validPassword = 'password123';
+
+    if (_emailController.text == validEmail && _passwordController.text == validPassword) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -22,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please enter email and password')),
+        const SnackBar(content: Text('Email atau kata sandi salah')),
       );
     }
   }
@@ -30,7 +33,15 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Login')),
+      appBar: AppBar(
+        title: Image.asset(
+          'assets/logo.png',
+          height: 70, // Ukuran besar namun proporsional untuk AppBar
+          fit: BoxFit.contain,
+        ),
+        centerTitle: true,
+        toolbarHeight: 80, // Menyesuaikan tinggi AppBar agar logo pas
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -38,17 +49,27 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             TextField(
               controller: _emailController,
-              decoration: const InputDecoration(labelText: 'Email'),
+              decoration: const InputDecoration(
+                labelText: 'Email',
+                border: OutlineInputBorder(), // Border untuk estetika
+              ),
             ),
+            const SizedBox(height: 16),
             TextField(
               controller: _passwordController,
-              decoration: const InputDecoration(labelText: 'Password'),
+              decoration: const InputDecoration(
+                labelText: 'Kata Sandi',
+                border: OutlineInputBorder(),
+              ),
               obscureText: true,
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _login,
-              child: const Text('Login'),
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 50), // Tombol lebih besar
+              ),
+              child: const Text('Masuk'),
             ),
           ],
         ),

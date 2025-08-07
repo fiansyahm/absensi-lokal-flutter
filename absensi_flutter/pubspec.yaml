@@ -1,4 +1,4 @@
-name: attendance_app
+name: absensi_flutter
 description: A simple attendance app with location and camera features
 version: 1.0.0
 environment:
@@ -14,11 +14,29 @@ dependencies:
   intl: ^0.17.0
   permission_handler: ^11.3.1 # Updated to fix V1 embedding issue
   path_provider: ^2.1.5 # Added for path_provider_android
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   hive_generator: ^2.0.1
   build_runner: ^2.4.6
+
 flutter:
   uses-material-design: true
+  assets:
+    - assets/logo.png # Ditambahkan untuk logo
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/logo.png"
+  min_sdk_android: 21
+
+  flutter_native_splash:
+    color: "#ffffff"
+    image: assets/logo.png
+    android: true
+    ios: true
+    web: false
