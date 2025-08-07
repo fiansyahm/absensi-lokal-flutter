@@ -44,6 +44,10 @@ Aplikasi mobile berbasis Flutter untuk mencatat kehadiran dengan validasi lokasi
 7. **Izinkan Izin**:
    - Izinkan akses kamera dan lokasi saat diminta.
    - Uji fitur "Ambil Selfie" dan "Check In".
+     
+8. **Akun**:
+   - Email Dummy: **admin@gmail.com**
+   - Password Dummy: **password123**
 
 ## Plugin yang Digunakan
 
