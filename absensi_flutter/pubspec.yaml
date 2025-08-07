@@ -1,0 +1,24 @@
+name: attendance_app
+description: A simple attendance app with location and camera features
+version: 1.0.0
+environment:
+  sdk: '>=2.17.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  geolocator: ^12.0.0 # Updated to latest
+  image_picker: ^1.1.2 # Updated to latest
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  intl: ^0.17.0
+  permission_handler: ^11.3.1 # Updated to fix V1 embedding issue
+  path_provider: ^2.1.5 # Added for path_provider_android
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.6
+flutter:
+  uses-material-design: true
